@@ -107,27 +107,66 @@
 
         <hr>
         <!-- Contact Information -->
-         <h2>Contact Us</h2>
-         <p>Phone: +27 123 456 7890</p>
-         <p>Location: Mooikloof next to Engen Garage, Pretoria East</p>  
+        <section id="Contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title"> Contact Us</h2>
 
+                <div class="contact-grid">
+                    <h3>📍Location</h3>
+                    <p>BP Garage Elarduspark, Pretoria East, South Africa</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:071 776 6721">071 776 6721</a></p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h3>⏰Hours</h3>
+                            <p>Mon-Sat: 8am - 6pm<br>Sun: Closed</p>
+                            </div>
+                </div>
+        </section>
+                            
 
          <! -- Gallery -->
-           <section id="gallery">
-            <h2>Gallery</h2>
+           <section id="gallery" class="gallery-section">
+            <div class="container">
+            <h2 class="section-title">Gallery</h2>
             
-            <div>
-                <figure>
-                    <img src="images/Car2engine.jpg" alt="Car Wash 2" width="300" height="200">
+            <div class="gallery-grid">
+                <figure class="gallery-item">
+                    <img src="images/Car2engine.jpg" alt="Engine Cetail" width="300" height="200">
                     <figcaption>Engine Bay Detail</figcaption>
                 </figure>
 
-                <figure>
-                    <img src="images/polish.jpg" alt="car polish" width="300" height="200">
+                <figure class="gallery-item">
+                    <img src="images/polish.jpg" alt="car polish" loading="lazy" width="300" height="200">
                     <figcaption>Car polish</figcaption>
                 </figure>
             </div>
               </section>
         
-    
+  <!--Optional test, JS lightbox script-->
+  <script>
+    document.addEventlistener('click, function(e){
+    const fig = e.target.closet('.gallery-item img');
+    if(!fig) return;
+    const src = fig.src;
+    //create overlay
+    const overlay = document.createElement('div');
+    overlay.style =
+    'position: fixed; insert: 0; background: rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center; z-index:9999'; 
+    const img = document.createElement('img');
+    img.src = src;
+    img.style = 'max-width:90%; max-height:90%; border - radius:8px';
+    overlay.appendChild(img);
+    overlay.addEventListener('click',()=>overlay.remove());
+    document.body.appendChild(overlay);
+    }); 
+    </script>
+        
+
+ 
+
 </body> 
